@@ -34,16 +34,22 @@ app.get('/artist-search', async (req, res) => {
     //console.log(req.query);
     try {
         const search = await spotifyApi.searchArtists(req.query.artist)
-        const artistItems = search.body.artists.items[0];
+        const artistItems = search.body.artists.items;
         console.log('The received data from the API: ', artistItems)
-        const images = artistItems.images;
-        const image = images[0];
-        const URL = image.url;
-        const renderObject = [{
-            name: `${artistItems.name}`,
-            image: `${URL}`
-        }]
-        res.render('artist-search-results', {renderObject});
+        let artistArray = [];
+        artistItems.forEach(artist => {
+            if (artist.images.length > 0) {
+                artistArray.push({
+                    name: `${artist.name}`,
+                    image: `${artist.images[0].url}`,
+                })
+            } else {
+                artistArray.push({
+                    name: `${artist.name}`,
+                })
+            }
+        });
+        res.render('artist-search-results', {artistArray});
     } catch (error) {
         console.log('The error while searching artists occurred: ', error);
     }
