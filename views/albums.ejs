@@ -2,5 +2,5 @@
 <% albumArray.forEach(album => { %>
     <img src="<%- album.image%>" alt="artist image"/>
     <p><%- album.name %></p>
-    <a href="<%-  %>">View Tracks</a>
+    <a href="<%- `/tracks/${album.id}` %>">View Tracks</a>
     <% }) %>

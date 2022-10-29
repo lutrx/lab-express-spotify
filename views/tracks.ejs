@@ -1,0 +1,8 @@
+<% tracksArray.forEach(track => { %>
+    <p><%- track.name %></p>
+    <figure>
+        <figcaption>Listen</figcaption>
+        <audio controls src="<%- track.preview%>">
+        </audio>
+    </figure>
+    <% }) %>

@@ -85,4 +85,24 @@ app.get('/albums/:artistId', async (req, res, next) => {
     }
 })
 
+app.get('/tracks/:albumId', async (req, res, next) => {
+    try {
+        const {albumId} = req.params;
+        const trackSearch = await spotifyApi.getAlbumTracks(albumId)
+        const resultSearchTracks = trackSearch.body.items
+        console.log('What is my track result: ', resultSearchTracks);
+        let tracksArray = [];
+        resultSearchTracks.forEach(track => {
+                tracksArray.push({
+                    name: `${track.name}`,
+                    preview: `${track.preview_url}`,
+                    id: `${track.id}`
+                })
+        });
+        res.render('tracks', {tracksArray});
+    } catch (error) {
+        console.log('There is some error: ', error);
+    }
+})
+
 app.listen(3000, () => console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊'));
