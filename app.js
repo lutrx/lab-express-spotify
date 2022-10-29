@@ -42,16 +42,46 @@ app.get('/artist-search', async (req, res) => {
                 artistArray.push({
                     name: `${artist.name}`,
                     image: `${artist.images[0].url}`,
+                    id: `${artist.id}`
                 })
             } else {
                 artistArray.push({
                     name: `${artist.name}`,
+                    id: `${artist.id}`
                 })
             }
         });
         res.render('artist-search-results', {artistArray});
     } catch (error) {
         console.log('The error while searching artists occurred: ', error);
+    }
+})
+
+app.get('/albums/:artistId', async (req, res, next) => {
+    try {
+        //console.log(req.query);
+        const {artistId} = req.params
+        const albumSearch = await spotifyApi.getArtistAlbums(artistId)
+        const resultSearchAlbums = albumSearch.body.items
+        console.log('What is my result: ', resultSearchAlbums);
+        let albumArray = [];
+        resultSearchAlbums.forEach(album => {
+            if (album.images.length > 0) {
+                albumArray.push({
+                    name: `${album.name}`,
+                    image: `${album.images[0].url}`,
+                    id: `${album.id}`
+                })
+            } else {
+                albumArray.push({
+                    name: `${album.name}`,
+                    id: `${album.id}`
+                })
+            }
+        });
+        res.render('albums', {albumArray});
+    } catch (error) {
+        console.log('There is some error: ', error);
     }
 })
 
