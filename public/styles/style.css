@@ -3,5 +3,33 @@
     width: 100vw;
     background-image: url('../images/spotify-background.jpeg');
     background-size: cover; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.form-home {
+    height: 150px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.4);
+}
+
+.input-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-button {
+    margin-top: 10px;
+    height: 30px;
+    width: 150px;
+    color: white;
+    background-color: red;
+}
