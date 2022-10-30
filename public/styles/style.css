@@ -32,19 +32,34 @@
     width: 150px;
     color: white;
     background-color: red;
+    border-radius: 10px;
+}
+
+.artist-first {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .artist {
-    width: 43vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.artist > img {
+    width: 640px;
 }
 
 .artist > div {
-    background-color: darkgrey;
+    background-color: grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    width: 640px;
 }
 
 .artist > div > p {
@@ -66,3 +81,67 @@
     align-items: center;
     border-radius: 10px;
 }
+
+.albums-first {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.albums {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.albums > img {
+    width: 640px;
+}
+
+.albums > div {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 640px;
+}
+
+.albums > div > p {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.albums > div > a {
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.tracks {
+    background-color: grey;
+    width: 30vw;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.track-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 30px;
+    color: white;
+}
+
+
