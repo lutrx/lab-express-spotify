@@ -1,7 +1,11 @@
 
 <% artistArray.forEach(artist => { %>
-<img src="<%- artist.image%>" alt="artist image"/>
-<p><%- artist.name %></p>
-<a href="<%- `/albums/${artist.id}` %>">View Albums</a>
+<div class="artist">
+    <img src="<%- artist.image%>" alt="artist image"/>
+    <div>
+        <p><%- artist.name %></p>
+        <a href="<%- `/albums/${artist.id}` %>">View Albums</a>
+    </div>
+</div>
 <% }) %>
 

@@ -33,3 +33,36 @@
     color: white;
     background-color: red;
 }
+
+.artist {
+    width: 43vw;
+}
+
+.artist > div {
+    background-color: darkgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.artist > div > p {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.artist > div > a {
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
